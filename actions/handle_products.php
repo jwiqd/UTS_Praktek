@@ -1,7 +1,6 @@
 <?php
-// actions/handle_products.php
 
-require '../includes/auth_check.php'; // WAJIB!
+require '../includes/auth_check.php'; 
 require '../config/database.php';
 
 $action = $_POST['action'] ?? null;
@@ -15,13 +14,12 @@ try {
         $price = $_POST['price'];
         $description = trim($_POST['description']);
 
-        // Validasi sederhana (Anda bisa tambahkan validasi lebih ketat)
+        // Validasi sederhana
         if (empty($sku) || empty($product_name) || !is_numeric($quantity) || !is_numeric($price)) {
             throw new Exception("Data tidak valid. SKU, Nama, Kuantitas, dan Harga wajib diisi.");
         }
         
         // Cek SKU unik (jika perlu, tapi database sudah handle)
-        // Kita bisa tambahkan cek di sini agar pesannya lebih ramah
         $stmt = $pdo->prepare("SELECT id FROM products WHERE sku = ?");
         $stmt->execute([$sku]);
         if ($stmt->fetch()) {
@@ -50,7 +48,7 @@ try {
             throw new Exception("Data tidak valid. Semua field wajib diisi.");
         }
         
-        // Cek SKU unik (pastikan tidak dipakai oleh produk LAIN)
+        // Cek SKU unik 
         $stmt = $pdo->prepare("SELECT id FROM products WHERE sku = ? AND id != ?");
         $stmt->execute([$sku, $id]);
         if ($stmt->fetch()) {

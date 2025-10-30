@@ -1,15 +1,15 @@
 <?php
-// actions/handle_register.php
+
 
 session_start();
 require '../config/database.php';
-require '../config/mailer.php'; // PHPMailer (lihat di bawah)
+require '../config/mailer.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // 1. Validasi (email valid, password cukup kuat, dll.)
+    // 1. Validasi 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Email tidak valid.");
     }

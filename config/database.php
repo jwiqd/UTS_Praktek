@@ -3,8 +3,8 @@
 
 $host = '127.0.0.1'; // atau 'localhost'
 $db   = 'db_gudang';
-$user = 'root'; // Ganti dengan user database Anda
-$pass = ''; // Ganti dengan password database Anda
+$user = 'root'; 
+$pass = ''; 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

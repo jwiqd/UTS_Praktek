@@ -1,10 +1,8 @@
 <?php
-// actions/handle_reset_password.php
 
 session_start();
 require '../config/database.php';
 
-// PAKSA ZONA WAKTU (WIB) - Perbaikan Final
 date_default_timezone_set('Asia/Jakarta');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

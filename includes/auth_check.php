@@ -1,5 +1,5 @@
 <?php
-// includes/auth_check.php
+
 
 // Mulai sesi jika belum dimulai
 if (session_status() == PHP_SESSION_NONE) {
@@ -14,8 +14,5 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Opsional: Cek role jika perlu
-// if ($_SESSION['user_role'] != 'Admin Gudang') {
-//     ...
-// }
+
 ?>

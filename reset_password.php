@@ -2,7 +2,7 @@
 require 'config/database.php';
 require 'includes/header.php';
 
-// PAKSA ZONA WAKTU (WIB) - Perbaikan Final
+
 date_default_timezone_set('Asia/Jakarta');
 
 $token = $_GET['token'] ?? null;
@@ -19,22 +19,16 @@ if ($token) {
 }
 
 if (!$user):
-    // --- INI BAGIAN YANG ANDA LIHAT ---
-    // Jika $user false (token tidak cocok ATAU waktu habis), tampilkan error
+    
 ?>
     <h2>Token Tidak Valid</h2>
     <p>Tautan reset password ini tidak valid atau telah kedaluwarsa. Silakan coba lagi melalui halaman Lupa Password.</p>
     <?php
-    // (Opsional: Tampilkan debug)
-    // echo "<p>Debug: Token di URL: " . htmlspecialchars($token) . "</p>";
-    // echo "<p>Debug: Waktu PHP Saat Ini: " . $current_time_php . "</p>";
     ?>
 
 <?php
 else:
-    // --- INI BAGIAN YANG SEHARUSNYA MUNCUL ---
-    // Jika $user DITEMUKAN (token valid), tampilkan form
-?>
+    ?>
     <h2>Buat Password Baru</h2>
     <p>Silakan masukkan password baru Anda.</p>
 
@@ -53,7 +47,7 @@ else:
     </form>
 
 <?php
-endif; // Penutup if ($user)
+endif; 
 
 require 'includes/footer.php';
 ?>

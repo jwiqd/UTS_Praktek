@@ -1,24 +1,23 @@
 <?php
-// config/mailer.php
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//require 'vendor/autoload.php'; // Path ke autoload Composer
+
 require __DIR__ . '/../vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 try {
     // Pengaturan Server SMTP
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Aktifkan untuk debugging
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com'; // Ganti dengan host SMTP Anda (mis: 'smtp.gmail.com')
+    $mail->Host       = 'smtp.gmail.com'; 
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'irvan.reki2005@gmail.com'; // Ganti dengan email SMTP Anda
-    $mail->Password   = 'ztya puhs tnwm pnpz'; // Ganti dengan password SMTP Anda
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // atau SMTPS
-    $mail->Port       = 465; // atau 465 untuk SMTPS
+    $mail->Username   = 'irvan.reki2005@gmail.com'; 
+    $mail->Password   = 'ztya puhs tnwm pnpz'; 
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
+    $mail->Port       = 465; 
 
     // Pengirim
     $mail->setFrom('no-reply@gudang.com', 'Admin Gudang');

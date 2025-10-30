@@ -1,7 +1,7 @@
 <?php
-// actions/handle_profile.php
 
-require '../includes/auth_check.php'; // WAJIB!
+
+require '../includes/auth_check.php'; 
 require '../config/database.php';
 
 $user_id = $_SESSION['user_id'];
@@ -23,7 +23,7 @@ try {
         $new_password = $_POST['new_password'];
         $confirm_password = $_POST['confirm_password'];
 
-        // 1. Cek password baru vs konfirmasi
+        // 1. Cek password baru
         if ($new_password !== $confirm_password) {
             throw new Exception("Password baru dan konfirmasi tidak cocok.");
         }

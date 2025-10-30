@@ -1,6 +1,6 @@
 <?php
-require 'includes/auth_check.php'; // WAJIB! Cek apakah sudah login
-require 'includes/header.php';     // Tampilkan header
+require 'includes/auth_check.php'; 
+require 'includes/header.php';     
 ?>
 
 <h2>Dashboard Admin Gudang</h2>
